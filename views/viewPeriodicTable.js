@@ -12,22 +12,31 @@ import {
 
 import csvReader from "./components/csvReader.js";
 import ElementClass from "./components/ElementClass";
+import {connect} from './../store';
 //import ModelView from "./viewModel";
 
-export default class PeriodicTable extends React.Component {
+class PeriodicTable extends React.Component {
  
-    constructor() {
-        super();
-     
-        let r = new csvReader();
-        let properties = require("./components/elementProperties.json");
-        var allElements = r.processData(properties);
+ //   constructor() {
+ //       super();
+ //    debugger;
+ //       let r = new csvReader();
+ //       let properties = require("./components/elementProperties.json");
+ //       var allElements = r.processData(properties);
 
-        this.state = {
-            elements: allElements,
-        };
-    }
+ //       this.state = {
+ //           elements: allElements,
+ //       };
+ //   }
 
+
+    //componentWillReceiveProps(nextProps) {
+    //    debugger;
+    //    if (nextProps.current !== this.props.current) {            
+    //      //this.rotation.setValue(0);
+    //      //Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+    //    }
+    //  }
 
     childWasClicked(c){
         var n = c.state.element.Name;
@@ -70,7 +79,11 @@ export default class PeriodicTable extends React.Component {
         return _row;
     }
 
-    generateTable (elements){
+    
+    generateTable (){
+    //generateTable (elements){
+      
+        var elements = this.props.elements;
         var _table = [];
         var row = 1;
 
@@ -90,12 +103,15 @@ export default class PeriodicTable extends React.Component {
     render() {
         return (
             <View style={styles.panel}>
-                {this.generateTable(this.state.elements)}
+                {this.generateTable()}
             </View>
         );
     }
 
 };
+
+const ConnectedPeriodicTable = connect(PeriodicTable);
+export default ConnectedPeriodicTable;
 
 const styles = StyleSheet.create({
     panel: {

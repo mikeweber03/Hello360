@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import csvReader from "./views/components/csvReader.js";
+
 /**
  * If you want to share data between multiple root components, you'll need a
  * global store like Redux. This is similar to building a web app where you
@@ -9,7 +11,8 @@ import * as React from 'react';
  * ensure all of our elements are synchronized.
  */
 const State = {
-  posts: undefined,
+  elements: [],
+  posts: "Whatever",
   current: -1,
 };
 
@@ -21,39 +24,48 @@ function updateComponents() {
   }
 }
 
-const POLY_PATH = 'https://poly.googleapis.com/v1/assets?';
-export function initialize(apiKey) {
-  // Fetch the top 5 posts from Google Poly
-  const options = {
-    curated: true,
-    format: 'GLTF2',
-    key: apiKey,
-    pageSize: 5,
-  };
-  const queryString = Object.keys(options)
-    .map(k => `${k}=${options[k]}`)
-    .join('&');
-  fetch(POLY_PATH + queryString)
-    .then(response => response.json())
-    .then(body => {
-      const entries = body.assets.map(asset => {
-        const objSource = asset.formats.filter(
-          format => format.formatType === 'GLTF2'
-        )[0];
-        return {
-          id: asset.name,
-          name: asset.displayName,
-          author: asset.authorName,
-          description: asset.description,
-          source: objSource,
-          preview: asset.thumbnail.url,
-        };
-      });
+export function initialize() {
+  let r = new csvReader();
+  let properties = require("./views/components/elementProperties.json");
+  var allElements = r.processData(properties);
 
-      State.posts = entries;
-      updateComponents();
-    });
+  State.elements = allElements;
+  updateComponents();
+  //debugger;
 }
+//const POLY_PATH = 'https://poly.googleapis.com/v1/assets?';
+//export function initialize(apiKey) {
+//  // Fetch the top 5 posts from Google Poly
+//  const options = {
+//    curated: true,
+//    format: 'GLTF2',
+//    key: apiKey,
+//    pageSize: 5,
+//  };
+//  const queryString = Object.keys(options)
+//    .map(k => `${k}=${options[k]}`)
+//    .join('&');
+//  fetch(POLY_PATH + queryString)
+//    .then(response => response.json())
+//    .then(body => {
+//      const entries = body.assets.map(asset => {
+//        const objSource = asset.formats.filter(
+//          format => format.formatType === 'GLTF2'
+//        )[0];
+//        return {
+//          id: asset.name,
+//          name: asset.displayName,
+//          author: asset.authorName,
+//          description: asset.description,
+//          source: objSource,
+//          preview: asset.thumbnail.url,
+//        };
+//      });
+//
+//      State.posts = entries;
+//      updateComponents();
+//    });
+//}
 
 export function setCurrent(value) {
   State.current = value;
@@ -61,15 +73,18 @@ export function setCurrent(value) {
 }
 
 export function connect(Component) {
+  //debugger;
   return class Wrapper extends React.Component {
     state = {
       posts: State.posts,
+      elements: State.elements,
       current: State.current,
     };
 
     _listener = () => {
       this.setState({
         posts: State.posts,
+        elements: State.elements,
         current: State.current,
       });
     };
@@ -87,6 +102,7 @@ export function connect(Component) {
         <Component
           {...this.props}
           posts={this.state.posts}
+          elements={this.state.elements}
           current={this.state.current}
         />
       );

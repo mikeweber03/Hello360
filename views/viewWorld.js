@@ -18,8 +18,8 @@ import AtomView from "./viewAtom";
 //import PointLight from 'PointLight';
 
 //import store from "../js/store/dataStore";
-import {connect} from "react-redux";
-
+//import {connect} from "react-redux";
+//import {initialize} from './store';
 
 export default class ModelView extends React.Component {
   state = {

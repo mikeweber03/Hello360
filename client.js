@@ -45,7 +45,7 @@ function init(bundle, parent, options = {}) {
 function onMessage(e, r360) {
   
   if(e.data.type === 'newComponent') {
-    debugger;
+  
  //    r360.renderToLocation(
  //     r360.createRoot('ModelView', {}),
  //     new Location([0, -2, -1]),

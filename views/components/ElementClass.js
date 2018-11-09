@@ -10,10 +10,10 @@ import {
  // PointLight
 } from 'react-360';
 
-import CreateStore from "../../js/store/CreateStore";
+//import CreateStore from "../../js/store/CreateStore";
 //import { addArticle } from "../../js/actions/index.js";
 
-import {connect} from "react-redux";
+//import {connect} from "react-redux";
 //import dataStore from "../../js/Store";
 
 
