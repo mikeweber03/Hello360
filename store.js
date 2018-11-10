@@ -68,6 +68,7 @@ export function initialize() {
 //}
 
 export function setCurrent(value) {
+  debugger;
   State.current = value;
   updateComponents();
 }

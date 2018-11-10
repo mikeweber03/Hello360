@@ -10,7 +10,7 @@ import {
 } from 'react-360';
 
 
-import csvReader from "./components/csvReader.js";
+//import csvReader from "./components/csvReader.js";
 import ElementClass from "./components/ElementClass";
 import {connect} from './../store';
 //import ModelView from "./viewModel";

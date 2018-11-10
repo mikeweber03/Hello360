@@ -10,6 +10,7 @@ import {
  // PointLight
 } from 'react-360';
 
+import {connect, setCurrent} from './../../store';
 //import CreateStore from "../../js/store/CreateStore";
 //import { addArticle } from "../../js/actions/index.js";
 
@@ -17,7 +18,7 @@ import {
 //import dataStore from "../../js/Store";
 
 
-export default class ElementClass extends Component {
+class ElementClass extends Component {
   constructor(props) {
     super(props);
     
@@ -57,16 +58,16 @@ export default class ElementClass extends Component {
   } 
 
 
-  onInputing() {
-    var e = this.state.element;
-    const action = {
-      type: 'ADD_ELEMENT',
-      payload: {e},
-    };
+  //onInputing() {
+  //  var e = this.state.element;
+  //  const action = {
+  //    type: 'ADD_ELEMENT',
+  //    payload: {e},
+  //  };
     //store.dispatch( addArticle({ name: 'React Redux Tutorial for Beginners', id: 1 }) )
     //this.props.dispatch(action);
    //this.props.clickHandler(this);
-  } 
+  //} 
 
 
 
@@ -79,7 +80,7 @@ export default class ElementClass extends Component {
      
       return (
         <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
-          onExit={e=>this.onExiting()} onInput={e=>this.onInputing()} 
+          onExit={e=>this.onExiting()} onInput={() => setCurrent(this.props.element.Number)}
           style={this.styleBackground() } key={this.state.keyNumber}>
         <Text style={styles.elementSymbol}>{e.Symbol}</Text>
         <Text style={styles.elementName}>{e.Name}</Text>
@@ -96,7 +97,8 @@ export default class ElementClass extends Component {
 //}
 
 //export default connect(mapStateToProps)(ElementClass);
-
+const ConnectedElementClass = connect(ElementClass);
+export default ConnectedElementClass;
 
 styles = StyleSheet.create({
   elementNull:{
