@@ -4,19 +4,9 @@ import {
   StyleSheet,
   Text,
   View
- // VrButton,
- // asset,
- // AmbientLight,
- // PointLight
 } from 'react-360';
 
 import {connect, setCurrent} from './../../store';
-//import CreateStore from "../../js/store/CreateStore";
-//import { addArticle } from "../../js/actions/index.js";
-
-//import {connect} from "react-redux";
-//import dataStore from "../../js/Store";
-
 
 class ElementClass extends Component {
   constructor(props) {
@@ -58,19 +48,6 @@ class ElementClass extends Component {
   } 
 
 
-  //onInputing() {
-  //  var e = this.state.element;
-  //  const action = {
-  //    type: 'ADD_ELEMENT',
-  //    payload: {e},
-  //  };
-    //store.dispatch( addArticle({ name: 'React Redux Tutorial for Beginners', id: 1 }) )
-    //this.props.dispatch(action);
-   //this.props.clickHandler(this);
-  //} 
-
-
-
   render() {
     if (this.state.hasError) {
       return <h1>Error: </h1>;
@@ -90,13 +67,6 @@ class ElementClass extends Component {
   }
 }
 
-//function mapStateToProps(state){
-//  return {
-//      element: state.element,
-//  }
-//}
-
-//export default connect(mapStateToProps)(ElementClass);
 const ConnectedElementClass = connect(ElementClass);
 export default ConnectedElementClass;
 

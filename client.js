@@ -28,12 +28,32 @@ function init(bundle, parent, options = {}) {
   myCylinderSurface
   );
 
+
+  
+  const leftPanel = new Surface(300, 400, Surface.SurfaceShape.Flat);
+  leftPanel.setAngle(-1.0, 0);
+  //const rightPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
+  //rightPanel.setAngle(0.6, 0);
+  r360.renderToSurface(
+    r360.createRoot('SelectedElement'),
+    leftPanel,
+  );
+  //r360.renderToSurface(
+  //  r360.createRoot('CurrentPost'),
+  //  rightPanel,
+  //);
+
+
+
+
+
  const loc1 =  new Location([0, -5, -3]);
 
   r360.renderToLocation(
     r360.createRoot('WorldView', {}),
     loc1,
   );
+
 
   // Load the initial environment
   //r360.compositor.setBackground(r360.getAssetURL('360_0053.jpg'), {format: '3DLR'});

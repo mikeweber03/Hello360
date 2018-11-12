@@ -31,50 +31,15 @@ export function initialize() {
 
   State.elements = allElements;
   updateComponents();
-  //debugger;
 }
-//const POLY_PATH = 'https://poly.googleapis.com/v1/assets?';
-//export function initialize(apiKey) {
-//  // Fetch the top 5 posts from Google Poly
-//  const options = {
-//    curated: true,
-//    format: 'GLTF2',
-//    key: apiKey,
-//    pageSize: 5,
-//  };
-//  const queryString = Object.keys(options)
-//    .map(k => `${k}=${options[k]}`)
-//    .join('&');
-//  fetch(POLY_PATH + queryString)
-//    .then(response => response.json())
-//    .then(body => {
-//      const entries = body.assets.map(asset => {
-//        const objSource = asset.formats.filter(
-//          format => format.formatType === 'GLTF2'
-//        )[0];
-//        return {
-//          id: asset.name,
-//          name: asset.displayName,
-//          author: asset.authorName,
-//          description: asset.description,
-//          source: objSource,
-//          preview: asset.thumbnail.url,
-//        };
-//      });
-//
-//      State.posts = entries;
-//      updateComponents();
-//    });
-//}
 
 export function setCurrent(value) {
-  debugger;
-  State.current = value;
+  //debugger;
+  State.current = value-1;
   updateComponents();
 }
 
 export function connect(Component) {
-  //debugger;
   return class Wrapper extends React.Component {
     state = {
       posts: State.posts,

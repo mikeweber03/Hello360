@@ -1,43 +1,15 @@
 import React from 'react';
 import {
   StyleSheet,
-  Text,
   View
- // VrButton,
- // asset,
- // AmbientLight,
- // PointLight
 } from 'react-360';
 
 
-//import csvReader from "./components/csvReader.js";
 import ElementClass from "./components/ElementClass";
 import {connect} from './../store';
-//import ModelView from "./viewModel";
 
 class PeriodicTable extends React.Component {
  
- //   constructor() {
- //       super();
- //    debugger;
- //       let r = new csvReader();
- //       let properties = require("./components/elementProperties.json");
- //       var allElements = r.processData(properties);
-
- //       this.state = {
- //           elements: allElements,
- //       };
- //   }
-
-
-    //componentWillReceiveProps(nextProps) {
-    //    debugger;
-    //    if (nextProps.current !== this.props.current) {            
-    //      //this.rotation.setValue(0);
-    //      //Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-    //    }
-    //  }
-
     childWasClicked(c){
         var n = c.state.element.Name;
         postMessage({ type: "newComponent", words: "hello"});
