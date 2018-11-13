@@ -13,11 +13,14 @@ class ElementClass extends Component {
     super(props);
     
     this.state = {
+      viewType: props.viewType,
+      viewMax: props.viewMax,
+      viewMin: props.viewMin,
       element: props.element,
       keyNumber: props.keyNumber,
       hasError: false,
       isIn: false,
-      bgcolor: 'rgba(128, 128, 128, 0.6)'
+      bgcolor: this.setColor()
     };
   }
 
@@ -43,10 +46,26 @@ class ElementClass extends Component {
 
   onExiting(e) {
     this.setState({
-      bgcolor: 'rgba(128, 128, 128, 0.6)'
+      //bgcolor: 'rgba(128, 128, 128, 0.6)'
+      bgcolor: this.setColor()
     });
   } 
 
+  setColor() {
+    
+    if (!this.props || !this.props.viewMin || ! this.props.viewMax || !this.props.viewType || ! this.state.element){
+      return 'rgba(128, 128, 128, 0.6)';
+    }
+    var min = this.props.viewMin;
+    var max = this.props.viewMax;
+    var value = this.state.element[this.props.viewType];
+    if (!min || !max || !value || min=='NaN' || max=='NaN'){
+      return 'rgba(128, 128, 128, 0.6)';
+    }
+   
+    var span = (value - min) / (max - min) * 255;
+    return 'rgba(' + span + ', 0, ' + (255 - span) + ', 1.0)';
+  }
 
   render() {
     if (this.state.hasError) {

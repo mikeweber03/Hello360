@@ -12,8 +12,10 @@ import csvReader from "./views/components/csvReader.js";
  */
 const State = {
   elements: [],
-  posts: "Whatever",
   current: -1,
+  viewType: '',
+  viewMin: 0,
+  viewMax: 0
 };
 
 const listeners = new Set();
@@ -33,25 +35,35 @@ export function initialize() {
   updateComponents();
 }
 
-export function setCurrent(value) {
-  //debugger;
+export function setCurrent(value) {  
   State.current = value-1;
+  updateComponents();
+}
+
+export function setViewType(value) {      
+  State.viewType = value;
+  State.viewMin = GetViewMinMax(State.viewType, true);
+  State.viewMax = GetViewMinMax(State.viewType, false);  
   updateComponents();
 }
 
 export function connect(Component) {
   return class Wrapper extends React.Component {
-    state = {
-      posts: State.posts,
+    state = {      
       elements: State.elements,
       current: State.current,
+      viewType: State.viewType,
+      viewMin: State.viewMin,
+      viewMax: State.viewMax
     };
 
     _listener = () => {
-      this.setState({
-        posts: State.posts,
+      this.setState({       
         elements: State.elements,
         current: State.current,
+        viewType: State.viewType,
+        viewMin: State.viewMin,
+        viewMax: State.viewMax
       });
     };
 
@@ -66,12 +78,40 @@ export function connect(Component) {
     render() {
       return (
         <Component
-          {...this.props}
-          posts={this.state.posts}
+          {...this.props}         
           elements={this.state.elements}
           current={this.state.current}
+          viewType={this.state.viewType}
+          viewMin={this.state.viewMin}
+          viewMax={this.state.viewMax}
         />
       );
     }
   };
+}
+
+function GetViewMinMax(type, isMin){
+  var retVal = null;
+  if (!State.elements || State.elements.Count < 1){
+    return retVal;
+  }
+  State.elements.forEach(element => {
+    var val = parseInt(element[type]);
+    if (val && val!= "nan"){
+    if (!retVal){
+      retVal = val;
+    }
+    if (isMin){
+      if (val < retVal){
+        retVal = val;
+      }
+    }
+    else {
+      if (val > retVal){
+        retVal = val;
+      }
+    }
+  }
+  });
+  return retVal;
 }

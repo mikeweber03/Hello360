@@ -1,25 +1,12 @@
 import React from 'react';
 import {
-  //View, 
-  //asset,
  Animated,
  PointLight,
  DirectionalLight,
  SpotLight,
  AmbientLight
- //Easing,
- //Entity
 } from 'react-360';
-//import { Animated } from 'react-native';
-//import EventEmitter from 'EventEmitter';
 import AtomView from "./viewAtom";
-//import Entity from 'Entity';
-//import AmbientLight from 'AmbientLight';
-//import PointLight from 'PointLight';
-
-//import store from "../js/store/dataStore";
-//import {connect} from "react-redux";
-//import {initialize} from './store';
 
 export default class ModelView extends React.Component {
   state = {
@@ -29,10 +16,6 @@ export default class ModelView extends React.Component {
   }
 
   componentDidMount() {
-   //store.subscribe(() => console.log('Look ma, Redux!!'));
-   
-//    EventEmitter.addListener("NewElement", this.handleAwesomeEvents, this);
-    //EventEmitter.addListener('awesome', this.handleAwesomeEvents.bind(this));
     Animated.timing(                  // Animate over time
       this.state.fadeAnim,            // The animated value to drive
       {
@@ -43,14 +26,14 @@ export default class ModelView extends React.Component {
   }
 
 
-  handleAwesomeEvents = (event) => {
-    let awesomeness = event.awesomeRating;
+//  handleAwesomeEvents = (event) => {
+//    let awesomeness = event.awesomeRating;
 
     // if you don't provide context in didMount,
     // "this" will not refer to the component,
     // and this next line will throw
-    this.setState({ awesomeness });
-  };
+//    this.setState({ awesomeness });
+//  };
 
   render() {
     //<PointLight style={{color:'red', transform:[{translate:[0,2,-5]}]}}/>

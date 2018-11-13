@@ -18,7 +18,7 @@ function init(bundle, parent, options = {}) {
   
   const myCylinderSurface = new Surface(
     1200, /* width */
-    600, /* height */
+    700, /* height */
     Surface.SurfaceShape.Cylinder /* shape */
   );
 

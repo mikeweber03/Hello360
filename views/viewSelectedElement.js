@@ -15,12 +15,10 @@ class SelectedElement extends React.Component {
         if (!this.props || !this.props.current || this.props.current < 0)
         {
             return (
-            <View style={styles.panel}>
-            
+            <View style={styles.panel}>      
             </View>
             );
-        }
-        debugger;
+        }        
         var num = this.props.current;
         var element = this.props.elements[num];
    
