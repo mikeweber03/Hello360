@@ -44,6 +44,11 @@ export function setViewType(value) {
   State.viewType = value;
   State.viewMin = GetViewMinMax(State.viewType, true);
   State.viewMax = GetViewMinMax(State.viewType, false);  
+//this.setState({       
+//  viewType:value,
+//  viewMin:GetViewMinMax(State.viewType, true),
+//  viewMax:GetViewMinMax(State.viewType, false)
+//});
   updateComponents();
 }
 

@@ -20,7 +20,7 @@ class ElementClass extends Component {
       keyNumber: props.keyNumber,
       hasError: false,
       isIn: false,
-      bgcolor: this.setColor()
+      bgcolor: this.getColor()
     };
   }
 
@@ -47,18 +47,17 @@ class ElementClass extends Component {
   onExiting(e) {
     this.setState({
       //bgcolor: 'rgba(128, 128, 128, 0.6)'
-      bgcolor: this.setColor()
+      bgcolor: this.getColor()
     });
   } 
 
-  setColor() {
-    
-    if (!this.props || !this.props.viewMin || ! this.props.viewMax || !this.props.viewType || ! this.state.element){
+  getColor() {    
+    if (!this.props || !this.props.viewMin || ! this.props.viewMax || !this.props.viewType || ! this.props.element){
       return 'rgba(128, 128, 128, 0.6)';
     }
     var min = this.props.viewMin;
     var max = this.props.viewMax;
-    var value = this.state.element[this.props.viewType];
+    var value = this.props.element[this.props.viewType];
     if (!min || !max || !value || min=='NaN' || max=='NaN'){
       return 'rgba(128, 128, 128, 0.6)';
     }
@@ -76,7 +75,7 @@ class ElementClass extends Component {
      
       return (
         <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
-          onExit={e=>this.onExiting()} onInput={() => setCurrent(this.props.element.Number)}
+          onExit={e=>this.onExiting()} onInput={() => setCurrent(this.state.element.Number)}
           style={this.styleBackground() } key={this.state.keyNumber}>
         <Text style={styles.elementSymbol}>{e.Symbol}</Text>
         <Text style={styles.elementName}>{e.Name}</Text>
