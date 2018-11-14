@@ -35,7 +35,7 @@ export default class AtomView extends React.Component {
           mtl: asset('Objects/p1.mtl')       
         }}
       />
-      <Text style={styles.elementSymbol}>H</Text>   
+      
       </View> 
     );
   }

@@ -90,7 +90,8 @@ class PeriodicTable extends React.Component {
             <View style={styles.panel}>
             <View style={styles.headerPanel}>
                 <VrButton style={this.props.viewType=='CovalentRadius' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('CovalentRadius')}                   
+                    onClick={() => setViewType('CovalentRadius')}      
+                                 
                     >
                     <Text style={styles.buttonText} >Covalent Radius</Text>
                 </VrButton>

@@ -97,7 +97,7 @@ function GetViewMinMax(type, isMin){
   }
   State.elements.forEach(element => {
     var val = parseInt(element[type]);
-    if (val && val!= "nan"){
+    if (val && val!= "NaN"){
     if (!retVal){
       retVal = val;
     }

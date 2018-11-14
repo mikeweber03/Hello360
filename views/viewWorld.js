@@ -25,16 +25,6 @@ export default class ModelView extends React.Component {
     ).start();                        // Starts the animation
   }
 
-
-//  handleAwesomeEvents = (event) => {
-//    let awesomeness = event.awesomeRating;
-
-    // if you don't provide context in didMount,
-    // "this" will not refer to the component,
-    // and this next line will throw
-//    this.setState({ awesomeness });
-//  };
-
   render() {
     //<PointLight style={{color:'red', transform:[{translate:[0,2,-5]}]}}/>
     //<DirectionalLight style={{color:'green'}}/>
@@ -49,11 +39,3 @@ export default class ModelView extends React.Component {
     );
   }
 };
-
-//function mapStateToProps(state){
-//  return {
-//      elementList: state.elementList,
-//  }
-//}
-
-//export default connect(mapStateToProps)(ModelView);
