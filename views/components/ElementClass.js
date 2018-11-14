@@ -24,7 +24,15 @@ class ElementClass extends Component {
     };
   }
 
- 
+  componentWillReceiveProps(nextProps) {
+    debugger;
+    if (nextProps.viewType !== this.props.viewType) {
+        this.setState({
+          bgcolor: this.getColor()
+        });
+    }
+  }
+
   componentDidCatch() {     
     this.setState({ hasError: true });
   }
