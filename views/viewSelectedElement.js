@@ -2,7 +2,9 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  Image,
+  asset
 } from 'react-360';
 
 
@@ -10,13 +12,12 @@ import {
 import {connect} from '../store';
 
 class SelectedElement extends React.Component {
- 
     render() {
-        if (!this.props || !this.props.current || this.props.current < 0)
+        if (!this.props || this.props.current < 0)
         {
             return (
-            <View style={styles.panel}>      
-            </View>
+            <View style={styles.panel}>    
+             </View>
             );
         }        
         var num = this.props.current;

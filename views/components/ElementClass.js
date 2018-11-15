@@ -3,7 +3,9 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
+  asset
 } from 'react-360';
 
 import {connect, setCurrent} from './../../store';
@@ -85,15 +87,30 @@ class ElementClass extends Component {
     } else {
       
       const e = this.state.element;
-     
-      return (
-        <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
-          onExit={e=>this.onExiting()} onInput={() => setCurrent(this.state.element.Number)}
-          style={this.styleBackground() } key={this.state.keyNumber}>
-        <Text style={styles.elementSymbol}>{e.Symbol}</Text>
-        <Text style={styles.elementName}>{e.Name}</Text>
-        </View>
-      );
+
+      if (this.props.viewType=="CovalentRadius" || this.props.viewType=="AtomicRadius"){
+        const sizer = this.state.element[this.props.viewType] / this.props.viewMax * 60;
+
+        return (
+          <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
+              onExit={e=>this.onExiting()} onInput={() => setCurrent(this.state.element.Number)}
+              style={this.styleBackground() } key={this.state.keyNumber}>
+               <Text style={styles.elementSymbol}>{e.Symbol}</Text>
+          <Text style={styles.elementName}>{e.Name}</Text>          
+           <Image source={asset('ball.png')} style={{transform:[{scale:[0.7,0.7,0.7]}], alignItems: 'center', width:sizer, height:sizer }} />      
+          </View>
+        );
+      }
+      else {      
+        return (
+          <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
+            onExit={e=>this.onExiting()} onInput={() => setCurrent(this.state.element.Number)}
+            style={this.styleBackground() } key={this.state.keyNumber}>
+          <Text style={styles.elementSymbol}>{e.Symbol}</Text>
+          <Text style={styles.elementName}>{e.Name}</Text>
+          </View>
+        );
+      }
     }
   }
 }
