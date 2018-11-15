@@ -11,7 +11,7 @@ import {connect, setCurrent} from './../../store';
 class ElementClass extends Component {
   constructor(props) {
     super(props);
-    
+    var val = this.props.element[this.props.viewType];
     this.state = {
       viewType: props.viewType,
       viewMax: props.viewMax,
@@ -20,15 +20,19 @@ class ElementClass extends Component {
       keyNumber: props.keyNumber,
       hasError: false,
       isIn: false,
-      bgcolor: this.getColor()
+      bgcolor: this.getColor(props.viewMin, props.viewMax, val)
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger;
+    //debugger;
     if (nextProps.viewType !== this.props.viewType) {
+        this.props.viewType = nextProps.viewType;
+        this.props.viewMax =nextProps.viewMin;
+        this.props.viewMin = nextProps.viewMax;
+        var val = this.state.element[nextProps.viewType];
         this.setState({
-          bgcolor: this.getColor()
+          bgcolor: this.getColor(nextProps.viewMin, nextProps.viewMax, val)
         });
     }
   }
@@ -53,19 +57,20 @@ class ElementClass extends Component {
   } 
 
   onExiting(e) {
+    var val = this.state.element[this.props.viewType];
     this.setState({
       //bgcolor: 'rgba(128, 128, 128, 0.6)'
-      bgcolor: this.getColor()
+      bgcolor: this.getColor(this.props.viewMin, this.props.viewMax, val)
     });
   } 
 
-  getColor() {    
-    if (!this.props || !this.props.viewMin || ! this.props.viewMax || !this.props.viewType || ! this.props.element){
-      return 'rgba(128, 128, 128, 0.6)';
-    }
-    var min = this.props.viewMin;
-    var max = this.props.viewMax;
-    var value = this.props.element[this.props.viewType];
+  getColor(min, max, value) {    
+    //if (!this.props || !this.props.viewMin || ! this.props.viewMax || !this.props.viewType || ! this.props.element){
+    //  return 'rgba(128, 128, 128, 0.6)';
+    //}
+    //var min = this.props.viewMin;
+    //var max = this.props.viewMax;
+    //var value = this.props.element[this.props.viewType];
     if (!min || !max || !value || min=='NaN' || max=='NaN'){
       return 'rgba(128, 128, 128, 0.6)';
     }
