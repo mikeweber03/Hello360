@@ -35,12 +35,17 @@ class PeriodicTable extends React.Component {
         return _element;
     }
 
-    generateRows(arRowContent, row) {
+    generateRows(arRowContent, row, isLanthanide) {
         var _row = [];
         var col;
     
         var dummyNumberForKey = 1000*row;
-        for( col = 0; col < 18 ; col++){
+
+        var colCount = 18;
+        if (isLanthanide){
+            colcount = 14;           
+        }
+        for( col = 0; col < colCount ; col++){
             if (arRowContent[col]){
             //_row.push(<View style={styles.element} key={dummyNumberForBlanks}><Text>{arRowContent[col].Symbol}</Text></View>);
             _row.push(this.generateElementClass(arRowContent[col], dummyNumberForKey));
@@ -67,8 +72,19 @@ class PeriodicTable extends React.Component {
                 arRowContent.push(this.findElement(row, col, elements));
             }
         
-        _table.push(<View key={row} style={styles.row}>{this.generateRows(arRowContent, row)}</View>)
+            _table.push(<View key={row} style={styles.row}>{this.generateRows(arRowContent, row)}</View>)
         }
+        //Lanthanides
+        _table.push(<View key="0" style={styles.skipRow}></View>)
+  
+        for (rowL = 101; rowL < 103; rowL++) {
+            var arRowContentL=[];
+            for (var colL=1; colL < 15; colL++){
+                arRowContentL.push(this.findElement(rowL, colL, elements));
+            }
+        
+            _table.push(<View key={rowL} style={styles.row}>{this.generateRows(arRowContentL, rowL, true)}</View>)
+        }        
         return _table;
     }
 
@@ -177,6 +193,9 @@ const styles = StyleSheet.create({
       flexDirection: 'row', 
       height:80
     },
+    skipRow:{
+        height:40
+      },
     elementDiv:{
       borderColor:'rgba(0, 0, 0, 1)', 
       width:65,

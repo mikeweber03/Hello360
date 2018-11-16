@@ -23,6 +23,17 @@ class SelectedElement extends React.Component {
         var num = this.props.current;
         var element = this.props.elements[num];
    
+        //For Lanthanides
+        var group = element.Group;
+        var period = element.Period;
+        if (period == "101"){
+            period = "N/A";
+            group = "6";
+        }
+        if (period == "102"){
+            period = "N/A";
+            group = "7";
+        }
         return (
             <View style={styles.panel}>
                 <Text style={styles.words}>{element.Number}</Text>
@@ -34,8 +45,8 @@ class SelectedElement extends React.Component {
                 <Text style={styles.words}>Melting Point: {element.MeltingPoint} C</Text>
                 <Text style={styles.words}>Boiling Point: {element.BoilingPoint} C</Text>
                 <Text style={styles.words}>Density: {element.Density} g/l</Text>
-                <Text style={styles.words}>Group: {element.Group}</Text>
-                <Text style={styles.words}>Period: {element.Period}</Text>
+                <Text style={styles.words}>Group: {group}</Text>
+                <Text style={styles.words}>Period: {period}</Text>
                 <Text style={styles.words}>{element.Configuration}</Text>
                 <Text style={styles.words}>Ionization Energy: {element.IonizationEnergy} kJ/mol</Text>
                 <Text style={styles.words}>Electronegativity: {element.Electronegativity}</Text>
