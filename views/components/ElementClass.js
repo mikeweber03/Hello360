@@ -95,8 +95,7 @@ class ElementClass extends Component {
           <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
               onExit={e=>this.onExiting()} onInput={() => setCurrent(this.state.element.Number)}
               style={this.styleBackground() } key={this.state.keyNumber}>
-               <Text style={styles.elementSymbol}>{e.Symbol}</Text>
-          <Text style={styles.elementName}>{e.Name}</Text>          
+           <Text style={styles.elementName}>{e.Name}</Text>          
            <Image source={asset('ball.png')} style={{transform:[{scale:[0.7,0.7,0.7]}], alignItems: 'center', width:sizer, height:sizer }} />      
           </View>
         );
@@ -106,6 +105,7 @@ class ElementClass extends Component {
           <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
             onExit={e=>this.onExiting()} onInput={() => setCurrent(this.state.element.Number)}
             style={this.styleBackground() } key={this.state.keyNumber}>
+          <Text style={styles.elementName}>{e.Number}</Text>
           <Text style={styles.elementSymbol}>{e.Symbol}</Text>
           <Text style={styles.elementName}>{e.Name}</Text>
           </View>
