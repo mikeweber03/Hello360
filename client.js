@@ -18,10 +18,10 @@ function init(bundle, parent, options = {}) {
   
   const myCylinderSurface = new Surface(
     1200, /* width */
-    1000, /* height */
+    700, /* height */
     Surface.SurfaceShape.Cylinder /* shape */
   );
-
+  
   r360.renderToSurface(
     r360.createRoot('PeriodicTable', { /* initial props */ }),
   //  r360.getDefaultSurface()
@@ -31,7 +31,7 @@ function init(bundle, parent, options = {}) {
 
   
   const leftPanel = new Surface(300, 400, Surface.SurfaceShape.Flat);
-  leftPanel.setAngle(-1.0, 0);
+  leftPanel.setAngle(0.75, 0.2);
   //const rightPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
   //rightPanel.setAngle(0.6, 0);
   r360.renderToSurface(
@@ -47,7 +47,7 @@ function init(bundle, parent, options = {}) {
 
 
 
- const loc1 =  new Location([0, -5, -3]);
+ const loc1 =  new Location([2.4, -1.3, -3]);
 
   r360.renderToLocation(
     r360.createRoot('WorldView', {}),
@@ -59,18 +59,18 @@ function init(bundle, parent, options = {}) {
   //r360.compositor.setBackground(r360.getAssetURL('360_0053.jpg'), {format: '3DLR'});
   r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));
 
-  r360.runtime.executor._worker.addEventListener('message', (e) => onMessage(e, r360));
+ // r360.runtime.executor._worker.addEventListener('message', (e) => onMessage(e, r360));
 }
 
-function onMessage(e, r360) {
+//function onMessage(e, r360) {
   
-  if(e.data.type === 'newComponent') {
+  //if(e.data.type === 'newComponent') {
   
  //    r360.renderToLocation(
  //     r360.createRoot('ModelView', {}),
  //     new Location([0, -2, -1]),
  //   );
-  }
-}
+  //}
+//}
 
 window.React360 = {init};

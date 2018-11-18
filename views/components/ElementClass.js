@@ -46,7 +46,7 @@ class ElementClass extends Component {
   styleBackground = function() {    
     return {
       borderColor:'rgba(0, 0, 0, 1)', 
-      width:65,
+      width:55,
       borderWidth:1,
       backgroundColor: this.state.bgcolor     
     }
@@ -119,12 +119,12 @@ const ConnectedElementClass = connect(ElementClass);
 export default ConnectedElementClass;
 
 styles = StyleSheet.create({
-  elementNull:{
+ // elementNull:{
       //borderColor:'rgba(0, 0, 0, 1)', 
-      width:65,
+   //   width:55,
       //borderWidth:1,
       //backgroundColor: 'rgba(255, 255, 255, 0.5)',
-  },
+  //},
   elementSymbol: { 
       fontSize: 24,
       justifyContent: 'flex-start',
@@ -132,7 +132,7 @@ styles = StyleSheet.create({
       color: 'rgba(255, 255, 0, 1)',
   },
   elementName: { 
-      fontSize: 12,
+      fontSize: 9,
       justifyContent: 'flex-end',
       alignItems: 'center',
       color: 'rgba(255, 255, 0, 1)' 

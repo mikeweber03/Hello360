@@ -186,25 +186,25 @@ const styles = StyleSheet.create({
      },
     panel: {
        // backgroundColor: 'rgba(128, 128, 128, 0.8)',
-        justifyContent: 'flex-start',
+        justifyContent: 'flex-end',
         alignItems: 'flex-start',
     },
     row:{
       flexDirection: 'row', 
-      height:80
+      height:65
     },
     skipRow:{
-        height:40
+        height:30
       },
     elementDiv:{
       borderColor:'rgba(0, 0, 0, 1)', 
-      width:65,
+      //width:55,
       borderWidth:1,
       backgroundColor: 'rgba(128, 128, 128, 0.8)',
     },
     elementNull:{
         //borderColor:'rgba(0, 0, 0, 1)', 
-        width:65,
+        width:55,
         //borderWidth:1,
         //backgroundColor: 'rgba(255, 255, 255, 0.5)',
     }

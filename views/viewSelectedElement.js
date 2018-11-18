@@ -61,7 +61,7 @@ export default ConnectedSelectedElement;
 
 const styles = StyleSheet.create({
     panel: {
-        width: 300,
+        width: 250,
         height: 400,
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         borderColor: '#303050',
