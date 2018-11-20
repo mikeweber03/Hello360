@@ -40,7 +40,7 @@ export function setCurrent(value) {
   updateComponents();
 }
 
-export function setViewType(value) {      
+export function setViewType(value) {       
   State.viewType = value;
   State.viewMin = GetViewMinMax(State.viewType, true);
   State.viewMax = GetViewMinMax(State.viewType, false);  
@@ -102,21 +102,21 @@ function GetViewMinMax(type, isMin){
   }
   State.elements.forEach(element => {
     var val = parseInt(element[type]);
-    if (val && val!= "NaN"){
-    if (!retVal){
-      retVal = val;
-    }
-    if (isMin){
-      if (val < retVal){
+    if (val!= "NaN"){
+      if (!retVal){
         retVal = val;
       }
-    }
-    else {
-      if (val > retVal){
-        retVal = val;
+      if (isMin){
+        if (val < retVal){
+          retVal = val;
+        }
+      }
+      else {
+        if (val > retVal){
+          retVal = val;
+        }
       }
     }
-  }
   });
   return retVal;
 }

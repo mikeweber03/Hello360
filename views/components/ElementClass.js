@@ -26,8 +26,7 @@ class ElementClass extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    //debugger;
+  componentWillReceiveProps(nextProps) {   
     if (nextProps.viewType !== this.props.viewType) {
         this.props.viewType = nextProps.viewType;
         this.props.viewMax =nextProps.viewMin;

@@ -51,6 +51,7 @@ class SelectedElement extends React.Component {
                 <Text style={styles.words}>Ionization Energy: {element.IonizationEnergy} kJ/mol</Text>
                 <Text style={styles.words}>Electronegativity: {element.Electronegativity}</Text>
                 <Text style={styles.words}>Electron Affinity: {element.ElectronAffinity} kJ/mol</Text>
+                <Text style={styles.words}>Violates Aufbau: {element.ViolatesAufbau==1 ? 'true': 'false'}</Text>
             </View>
         );
     }

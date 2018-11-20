@@ -135,6 +135,10 @@ class PeriodicTable extends React.Component {
                     onClick={() => setViewType('ElectronAffinity')} >
                     <Text style={styles.buttonText} >Electron Affinity</Text>
                 </VrButton>
+                <VrButton style={this.props.viewType=='ViolatesAufbau' ? styles.buttonSelected: styles.button} 
+                    onClick={() => setViewType('ViolatesAufbau')} >
+                    <Text style={styles.buttonText} >Violates Aufbau</Text>
+                </VrButton>
             </View>
                 {this.generateTable()}
             </View>
