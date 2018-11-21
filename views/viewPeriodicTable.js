@@ -1,21 +1,20 @@
 import React from 'react';
 import {
   StyleSheet,
-  View,
-  VrButton,
-  Text
+  View  
 } from 'react-360';
 
 
 import ElementClass from "./components/ElementClass";
-import {connect, setViewType} from './../store';
+import BannerButtons from "./components/BannerButtons";
+import {connect} from './../store';
 
 class PeriodicTable extends React.Component {
  
-    childWasClicked(c){
-        var n = c.state.element.Name;
-        postMessage({ type: "newComponent", words: "hello"});
-    }
+   // childWasClicked(c){
+   //     var n = c.state.element.Name;
+   //     postMessage({ type: "newComponent", words: "hello"});
+   // }
   
 
  
@@ -31,7 +30,8 @@ class PeriodicTable extends React.Component {
 
     generateElementClass(element, dummyNumberForKey){
         var _element = [];
-        _element.push(<ElementClass key={dummyNumberForKey} element={element} keyNumber={dummyNumberForKey} clickHandler={this.childWasClicked} /> );
+        //_element.push(<ElementClass key={dummyNumberForKey} element={element} keyNumber={dummyNumberForKey} clickHandler={this.childWasClicked} /> );
+        _element.push(<ElementClass key={dummyNumberForKey} element={element} keyNumber={dummyNumberForKey}  /> );
         return _element;
     }
 
@@ -104,42 +104,7 @@ class PeriodicTable extends React.Component {
     render() {
         return (            
             <View style={styles.panel}>
-            <View style={styles.headerPanel}>
-                <VrButton style={this.props.viewType=='CovalentRadius' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('CovalentRadius')}      
-                                 
-                    >
-                    <Text style={styles.buttonText} >Covalent Radius</Text>
-                </VrButton>
-                <VrButton style={this.props.viewType=='AtomicRadius' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('AtomicRadius')} >
-                    <Text style={styles.buttonText} >Atomic Radius</Text>
-                </VrButton>
-                <VrButton style={this.props.viewType=='BoilingPoint' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('BoilingPoint')} >
-                    <Text style={styles.buttonText} >Boiling Point</Text>
-                </VrButton>
-                <VrButton style={this.props.viewType=='MeltingPoint' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('MeltingPoint')} >
-                    <Text style={styles.buttonText} >Melting Point</Text>
-                </VrButton>
-                <VrButton style={this.props.viewType=='IonizationEnergy' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('IonizationEnergy')} >
-                    <Text style={styles.buttonText} >Ionization Energy</Text>
-                </VrButton>
-                <VrButton style={this.props.viewType=='Electronegativity' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('Electronegativity')} >
-                    <Text style={styles.buttonText} >Electronegativity</Text>
-                </VrButton>
-                <VrButton style={this.props.viewType=='ElectronAffinity' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('ElectronAffinity')} >
-                    <Text style={styles.buttonText} >Electron Affinity</Text>
-                </VrButton>
-                <VrButton style={this.props.viewType=='ViolatesAufbau' ? styles.buttonSelected: styles.button} 
-                    onClick={() => setViewType('ViolatesAufbau')} >
-                    <Text style={styles.buttonText} >Violates Aufbau</Text>
-                </VrButton>
-            </View>
+            <BannerButtons  />
                 {this.generateTable()}
             </View>
         );

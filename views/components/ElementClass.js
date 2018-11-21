@@ -72,7 +72,7 @@ class ElementClass extends Component {
     //var min = this.props.viewMin;
     //var max = this.props.viewMax;
     //var value = this.props.element[this.props.viewType];
-    if (!min || !max || !value || min=='NaN' || max=='NaN'){
+    if ((!min && min!==0) || (!max && max!==0) || (!value && value!==0) || min=='NaN' || max=='NaN'){
       return 'rgba(128, 128, 128, 0.6)';
     }
    
