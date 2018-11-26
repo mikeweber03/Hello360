@@ -31,20 +31,21 @@ function init(bundle, parent, options = {}) {
 
   
   const leftPanel = new Surface(300, 400, Surface.SurfaceShape.Flat);
-  leftPanel.setAngle(0.75, 0.2);
-  //const rightPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
-  //rightPanel.setAngle(0.6, 0);
+  leftPanel.setAngle(0.85, 0.2);
+  
   r360.renderToSurface(
     r360.createRoot('SelectedElement'),
     leftPanel,
   );
-  //r360.renderToSurface(
-  //  r360.createRoot('CurrentPost'),
-  //  rightPanel,
-  //);
-
-
-
+  
+  const bohrPanel = new Surface(256, 256, Surface.SurfaceShape.Flat);
+  bohrPanel.setAngle(1.2, 0.2);
+  
+  r360.renderToSurface(
+    r360.createRoot('ViewBohrDiagram'),
+    bohrPanel,
+  );
+  
 
 
  const loc1 =  new Location([2.4, -1.3, -3]);
