@@ -3,20 +3,21 @@ import {
   StyleSheet,
   View,
   Text,
+  VrButton,
   Image,
   asset
 } from 'react-360';
 
 
-//import ElementClass from "./components/ElementClass";
-import {connect} from '../store';
+import ViewBohrDiagram from "./viewBohrDiagram";
+import {connect, setCurrent} from '../store';
 
 class SelectedElement extends React.Component {
     render() {
         if (!this.props || this.props.current < 0)
         {
             return (
-            <View style={styles.panel}>    
+            <View>    
              </View>
             );
         }        
@@ -34,26 +35,46 @@ class SelectedElement extends React.Component {
             period = "N/A";
             group = "7";
         }
-        return (
-            <View style={styles.panel}>
-                <Text style={styles.words}>{element.Number}</Text>
-                <Text style={styles.title}>{element.Name}</Text>
-                <Text style={styles.title}>{element.Symbol}</Text>
-                <Text style={styles.words}>Atomic Wt: {element.AtomicWt}</Text>
-                <Text style={styles.words}>Covalent Radius: {element.CovalentRadius} pm</Text>
-                <Text style={styles.words}>Atomic Radius: {element.AtomicRadius} pm</Text>
-                <Text style={styles.words}>Melting Point: {element.MeltingPoint} C</Text>
-                <Text style={styles.words}>Boiling Point: {element.BoilingPoint} C</Text>
-                <Text style={styles.words}>Density: {element.Density} g/l</Text>
-                <Text style={styles.words}>Group: {group}</Text>
-                <Text style={styles.words}>Period: {period}</Text>
-                <Text style={styles.words}>{element.Configuration}</Text>
-                <Text style={styles.words}>Ionization Energy: {element.IonizationEnergy} kJ/mol</Text>
-                <Text style={styles.words}>Electronegativity: {element.Electronegativity}</Text>
-                <Text style={styles.words}>Electron Affinity: {element.ElectronAffinity} kJ/mol</Text>
-                <Text style={styles.words}>Violates Aufbau: {element.ViolatesAufbau==1 ? 'true': 'false'}</Text>
-            </View>
-        );
+        
+        if (!this.props || this.props.current < 0)
+        {
+            return (
+            <View >    
+                </View>
+            );
+        }        
+        else {
+            return (
+                <View style={styles.viewBackground}>
+                    <View style={styles.panel}>
+                        <Text style={styles.words}>{element.Number}</Text>
+                        <Text style={styles.title}>{element.Name}</Text>
+                        <Text style={styles.title}>{element.Symbol}</Text>
+                        <Text style={styles.words}>Atomic Wt: {element.AtomicWt}</Text>
+                        <Text style={styles.words}>Covalent Radius: {element.CovalentRadius} pm</Text>
+                        <Text style={styles.words}>Atomic Radius: {element.AtomicRadius} pm</Text>
+                        <Text style={styles.words}>Melting Point: {element.MeltingPoint} C</Text>
+                        <Text style={styles.words}>Boiling Point: {element.BoilingPoint} C</Text>
+                        <Text style={styles.words}>Density: {element.Density} g/l</Text>
+                        <Text style={styles.words}>Group: {group}</Text>
+                        <Text style={styles.words}>Period: {period}</Text>
+                        <Text style={styles.words}>{element.Configuration}</Text>
+                        <Text style={styles.words}>Ionization Energy: {element.IonizationEnergy} kJ/mol</Text>
+                        <Text style={styles.words}>Electronegativity: {element.Electronegativity}</Text>
+                        <Text style={styles.words}>Electron Affinity: {element.ElectronAffinity} kJ/mol</Text>
+                        <Text style={styles.words}>Violates Aufbau: {element.ViolatesAufbau==1 ? 'true': 'false'}</Text>
+                    </View>
+                    <View style={styles.viewDiagram}>
+                        <ViewBohrDiagram></ViewBohrDiagram>
+                    </View>
+                    <View>
+                        <VrButton onClick={() => setCurrent(-1)} >
+                            <Text >Close</Text>
+                        </VrButton>
+                    </View>
+                </View>           
+            );
+        }
     }
 };
 
@@ -61,6 +82,15 @@ const ConnectedSelectedElement = connect(SelectedElement);
 export default ConnectedSelectedElement;
 
 const styles = StyleSheet.create({
+    viewBackground: {
+        width: 650,
+        height: 420,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        padding: 10,
+      },
     panel: {
         width: 250,
         height: 400,
@@ -72,6 +102,12 @@ const styles = StyleSheet.create({
         alignItems: 'stretch',
         padding: 10,
       },
+    viewDiagram: {
+        width: 256,
+        height: 256,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        padding: 0,
+    },
     title: {
         color:'#000000',
         fontSize: 24,
