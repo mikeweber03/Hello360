@@ -23,8 +23,7 @@ class ViewBohrDiagram extends React.Component {
             );
         }        
 
-        var sizer=256;
-        var symbol = 'H';
+        var sizer=256;       
         var num = this.props.current;
         var element = this.props.elements[num];
 
@@ -43,7 +42,7 @@ export default ConnectedViewBohrDiagram;
 const styles = StyleSheet.create({
     panel: {
         width: 256,
-        height: 256,
+        height: 256,    
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         padding: 0,
       },

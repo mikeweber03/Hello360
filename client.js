@@ -17,7 +17,7 @@ function init(bundle, parent, options = {}) {
 
   
   const myCylinderSurface = new Surface(
-    1200, /* width */
+    1000, /* width */
     700, /* height */
     Surface.SurfaceShape.Cylinder /* shape */
   );
@@ -31,7 +31,7 @@ function init(bundle, parent, options = {}) {
 
   
   const leftPanel = new Surface(650, 450, Surface.SurfaceShape.Flat);
-  leftPanel.setAngle(-0.5, 0.2);
+  leftPanel.setAngle(0.0, 0.1);
   
   r360.renderToSurface(
     r360.createRoot('SelectedElement'),
@@ -48,7 +48,7 @@ function init(bundle, parent, options = {}) {
   
 
 
- const loc1 =  new Location([2.4, -1.3, -3]);
+ const loc1 =  new Location([0, -1.5, -3.8]);
 
   r360.renderToLocation(
     r360.createRoot('WorldView', {}),

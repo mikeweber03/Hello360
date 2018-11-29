@@ -68,7 +68,7 @@ class SelectedElement extends React.Component {
                         <ViewBohrDiagram></ViewBohrDiagram>
                     </View>
                     <View>
-                        <VrButton onClick={() => setCurrent(-1)} >
+                        <VrButton style={styles.button} onClick={() => setCurrent(-1)} >
                             <Text >Close</Text>
                         </VrButton>
                     </View>
@@ -85,16 +85,16 @@ const styles = StyleSheet.create({
     viewBackground: {
         width: 650,
         height: 420,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         padding: 10,
       },
     panel: {
         width: 250,
         height: 400,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         borderColor: '#303050',
         borderWidth: 2,
         flexDirection: 'column',
@@ -104,8 +104,16 @@ const styles = StyleSheet.create({
       },
     viewDiagram: {
         width: 256,
-        height: 256,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        height: 256,     
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        justifyContent: 'flex-start',
+        alignItems:'flex-start',
+        padding: 0,
+    },
+    button: {
+        backgroundColor: 'rgba(128, 128, 255, 1.0)',
+        justifyContent: 'flex-start',
+        alignItems:'flex-start',
         padding: 0,
     },
     title: {
