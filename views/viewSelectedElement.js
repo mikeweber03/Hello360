@@ -45,7 +45,12 @@ class SelectedElement extends React.Component {
         }        
         else {
             return (
-                <View style={styles.viewBackground}>
+                <View style={styles.viewBackground} onInput={() => setCurrent(-1)} >
+                    <View>
+                        <VrButton style={styles.button} onClick={() => setCurrent(-1)} >
+                            <Text >Close</Text>
+                        </VrButton>
+                    </View>
                     <View style={styles.panel}>
                         <Text style={styles.words}>{element.Number}</Text>
                         <Text style={styles.title}>{element.Name}</Text>
@@ -66,12 +71,7 @@ class SelectedElement extends React.Component {
                     </View>
                     <View style={styles.viewDiagram}>
                         <ViewBohrDiagram></ViewBohrDiagram>
-                    </View>
-                    <View>
-                        <VrButton style={styles.button} onClick={() => setCurrent(-1)} >
-                            <Text >Close</Text>
-                        </VrButton>
-                    </View>
+                    </View>                  
                 </View>           
             );
         }

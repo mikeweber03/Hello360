@@ -1,6 +1,6 @@
 # Blender v2.76 (sub 0) OBJ File: 'p1.blend'
 # www.blender.org
-mtllib p1.mtl
+# mtllib p1.mtl
 o Sphere
 v -0.973006 -0.091423 0.000000
 v -0.950905 -0.179333 -0.000000

@@ -23,33 +23,192 @@ class AtomView extends React.Component {
   render() { 
     //<Entity lit="false" style={{transform:[{scale:[0.6,0.6,0.6]}], alignItems: 'center'}}
     //const e = this.state.element;
-      if (!this.props || this.props.current < 0)
-      {
-          return (
-          <View >    
-           </View>
-          );
-      }        
-      else {
-        var sizerShell = this.props.elements[this.props.current].CovalentRadius * 0.005;
-        var sizerValence = this.props.elements[this.props.current].AtomicRadius * 0.005;
+    if (!this.props || this.props.current < 0)
+    {
+        return (
+        <View >    
+          </View>
+        );
+    }        
+    else {
+      var element = this.props.elements[this.props.current];
+      var sizerShell = element.CovalentRadius * 0.005;
+      var sizerValence = element.AtomicRadius * 0.005;
+     
+      var type = element.Valence;
 
+      if (type=="s1"){
         return (
           <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/p1.mtl')       
-            }}
-          />
+            <Entity lit="false" style={{transform:[{scale:[sizerShell,sizerShell,sizerShell ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/shell.obj'),
+                mtl: asset('Objects/solidBlue.mtl')
+              }}
+            />            
+          </View> 
+        );
+      }
+
+      if (type=="s2"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerShell,sizerShell,sizerShell ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/shell.obj'),
+                mtl: asset('Objects/solidGray.mtl')
+              }}
+            />            
+       
+        </View> 
+        );
+      }
+
+
+      if (type=="p1"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />          
+        </View> 
+        );
+      }
+
+      if (type=="p2"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />          
+        </View> 
+        );
+      }
+
+      if (type=="p3"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />        
+        </View> 
+        );
+      }
+
+
+      if (type=="p4"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />          
+        </View> 
+        );
+      }
+
+      if (type=="p5"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />     
+        </View> 
+        );
+      }
+
+
+      if (type=="p6"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/p1.obj'),
+                mtl: asset('Objects/solidGray.mtl')       
+              }}
+            />        
+        </View> 
+        );
+      }
+
+      return (
+        <View style={{alignItems: 'center'}} >
           <Entity lit="false" style={{transform:[{scale:[sizerShell,sizerShell,sizerShell ]}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/shell.obj'),
-              mtl: asset('Objects/shell.mtl')
+              mtl: asset('Objects/transGray.mtl')
             }}
-          />      
-        </View> 
-        );
+          />                 
+      </View> 
+      );
     }
   }
 };

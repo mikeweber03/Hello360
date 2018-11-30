@@ -1,6 +1,6 @@
 # Blender v2.76 (sub 0) OBJ File: 'shell.blend'
 # www.blender.org
-mtllib shell.mtl
+# mtllib transBlue.mtl
 o Sphere
 v -0.186999 0.944912 0.000000
 v -0.367731 0.890087 0.000000
