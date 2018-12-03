@@ -31,7 +31,7 @@ function init(bundle, parent, options = {}) {
 
   
   const leftPanel = new Surface(650, 450, Surface.SurfaceShape.Flat);
-  leftPanel.setAngle(-0.1, 0.1);
+  leftPanel.setAngle(-1.0, 0.1);
   
   r360.renderToSurface(
     r360.createRoot('SelectedElement'),

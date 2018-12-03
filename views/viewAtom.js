@@ -199,6 +199,316 @@ class AtomView extends React.Component {
         );
       }
 
+      if (type=="d1"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />
+        </View> 
+        );
+      }
+
+      if (type=="d2"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+               source={{
+                 obj: asset('Objects/d1.obj'),
+                 mtl: asset('Objects/transBlue.mtl')       
+               }}
+             />
+         </View> 
+        );
+      }
+
+      if (type=="d3"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+               source={{
+                 obj: asset('Objects/d1.obj'),
+                 mtl: asset('Objects/transBlue.mtl')       
+               }}
+             />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+         </View> 
+        );
+      }
+
+      if (type=="d4"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+                source={{
+                  obj: asset('Objects/d1.obj'),
+                  mtl: asset('Objects/transBlue.mtl')       
+                }}
+              />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+          </View> 
+        );
+      };
+
+      if (type=="d5"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+                source={{
+                  obj: asset('Objects/d1.obj'),
+                  mtl: asset('Objects/transBlue.mtl')       
+                }}
+              />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d5.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+          </View> 
+        );
+      };
+
+      if (type=="d6"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+                source={{
+                  obj: asset('Objects/d1.obj'),
+                  mtl: asset('Objects/solidBlue.mtl')       
+                }}
+              />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d5.obj'),
+                mtl: asset('Objects/solidBlue.mtl')       
+              }}
+            />
+          </View> 
+        );
+      };
+
+      if (type=="d7"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+                source={{
+                  obj: asset('Objects/d1.obj'),
+                  mtl: asset('Objects/transGray.mtl')       
+                }}
+              />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d5.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+          </View> 
+        );
+      };
+
+      if (type=="d8"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+                source={{
+                  obj: asset('Objects/d1.obj'),
+                  mtl: asset('Objects/transGray.mtl')       
+                }}
+              />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d5.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+          </View> 
+        );
+      };
+
+      if (type=="d9"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+                source={{
+                  obj: asset('Objects/d1.obj'),
+                  mtl: asset('Objects/transGray.mtl')       
+                }}
+              />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d5.obj'),
+                mtl: asset('Objects/transBlue.mtl')       
+              }}
+            />
+          </View> 
+        );
+      };
+
+      if (type=="d10"){
+        return (
+          <View style={{alignItems: 'center'}} >
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}], alignItems: 'center'}}
+                source={{
+                  obj: asset('Objects/d1.obj'),
+                  mtl: asset('Objects/transGray.mtl')       
+                }}
+              />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}, {rotateY: 45}, {rotateZ: 90}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d1.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+            <Entity lit="false" style={{transform:[{scale:[sizerValence,sizerValence,sizerValence ]}], alignItems: 'center'}}
+              source={{
+                obj: asset('Objects/d5.obj'),
+                mtl: asset('Objects/transGray.mtl')       
+              }}
+            />
+          </View> 
+        );
+      };
+
       return (
         <View style={{alignItems: 'center'}} >
           <Entity lit="false" style={{transform:[{scale:[sizerShell,sizerShell,sizerShell ]}], alignItems: 'center'}}

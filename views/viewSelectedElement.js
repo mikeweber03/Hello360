@@ -64,6 +64,7 @@ class SelectedElement extends React.Component {
                         <Text style={styles.words}>Group: {group}</Text>
                         <Text style={styles.words}>Period: {period}</Text>
                         <Text style={styles.words}>{element.Configuration}</Text>
+                        <Text style={styles.words}>Valence Shell: {element.Valence}</Text>
                         <Text style={styles.words}>Ionization Energy: {element.IonizationEnergy} kJ/mol</Text>
                         <Text style={styles.words}>Electronegativity: {element.Electronegativity}</Text>
                         <Text style={styles.words}>Electron Affinity: {element.ElectronAffinity} kJ/mol</Text>
@@ -84,7 +85,7 @@ export default ConnectedSelectedElement;
 const styles = StyleSheet.create({
     viewBackground: {
         width: 650,
-        height: 420,
+        height: 430,
         backgroundColor: 'rgba(255, 255, 255, 1)',
         flexDirection: 'row',
         justifyContent: 'flex-start',
