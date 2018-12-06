@@ -92,7 +92,13 @@ class ElementClass extends Component {
 
         return (
           <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
-              onExit={e=>this.onExiting()} onInput={() => setCurrent(this.state.element.Number)}
+              onExit={e=>this.onExiting()} 
+              onInput={e => {
+                const inputEvent = e.nativeEvent.inputEvent;
+                if (inputEvent.action === 'down' && inputEvent.buttonClass === 'confirm') {
+                  setCurrent(this.state.element.Number);
+                }
+              }}             
               style={this.styleBackground() } key={this.state.keyNumber}>
            <Text style={styles.elementName}>{e.Name}</Text>          
            <Image source={asset('ball.png')} style={{transform:[{scale:[0.7,0.7,0.7]}], alignItems: 'center', width:sizer, height:sizer }} />      
@@ -102,7 +108,13 @@ class ElementClass extends Component {
       else {      
         return (
           <View pointerEvents='box-only' onEnter={e=>this.onEntering()} 
-            onExit={e=>this.onExiting()} onInput={() => setCurrent(this.state.element.Number)}
+            onExit={e=>this.onExiting()}
+            onInput={e => {
+              const inputEvent = e.nativeEvent.inputEvent;
+              if (inputEvent.action === 'down' && inputEvent.buttonClass === 'confirm') {
+                setCurrent(this.state.element.Number);
+              }
+            }}             
             style={this.styleBackground() } key={this.state.keyNumber}>
           <Text style={styles.elementName}>{e.Number}</Text>
           <Text style={styles.elementSymbol}>{e.Symbol}</Text>
