@@ -5,179 +5,14 @@ import {
 } from 'react-360';
 
 import Entity from 'Entity';
-import {connect, toggleExplode} from './../../store';
+import {connect, toggleExplode} from '../../store';
 
 
-class OrbitalLogic extends React.Component {
-
-
-//returnOrbital(this.props.orbitalType, this.props.sizerValence, parent, isExploded) {
+class OrbitalLogicD extends React.Component {
   
   render () {  
     var iexplode = this.props.isExploded ? 1 : 0;
 
-    if (this.props.orbitalType=="s1"){
-      return (
-        <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/shell.obj'),
-              mtl: asset('Objects/solidBlue.mtl')
-            }}
-          />            
-        </View> 
-      );
-    }
-  
-    if (this.props.orbitalType=="s2"){
-      return (
-        <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}], 
-            alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/shell.obj'),
-              mtl: asset('Objects/solidGray.mtl')
-            }}              
-          />                   
-      </View> 
-      );
-    }
-  
-  
-    if (this.props.orbitalType=="p1"){
-      return (
-        <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}
-          />          
-      </View> 
-      );
-    }
-  
-    if (this.props.orbitalType=="p2"){
-      return (
-        <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}             
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}
-          />          
-      </View> 
-      );
-    }
-  
-    if (this.props.orbitalType=="p3"){
-      return (
-        <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}
-          />        
-      </View> 
-      );
-    }
-  
-  
-    if (this.props.orbitalType=="p4"){
-      return (
-        <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidGray.mtl')       
-            }}
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}
-          />          
-      </View> 
-      );
-    }
-  
-    if (this.props.orbitalType=="p5"){
-      return (
-        <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidGray.mtl')       
-            }}
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidGray.mtl')       
-            }}
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidBlue.mtl')       
-            }}
-          />     
-      </View> 
-      );
-    }
-  
-  
-    if (this.props.orbitalType=="p6"){
-      return (
-        <View style={{alignItems: 'center'}} >
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidGray.mtl')       
-            }}
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateY: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidGray.mtl')       
-            }}
-          />
-          <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, {rotateZ: 90}], alignItems: 'center'}}
-            source={{
-              obj: asset('Objects/p1.obj'),
-              mtl: asset('Objects/solidGray.mtl')       
-            }}
-          />        
-      </View> 
-      );
-    }
-  
     if (this.props.orbitalType=="d1"){
       return (
         <View style={{alignItems: 'center'}} >
@@ -207,7 +42,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-          {translate:[0, this.props.sizerValence * 2 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
+          {translate:[0, this.props.sizerValence * 3 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/solidBlue.mtl')       
@@ -240,7 +75,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]},
-            {translate:[0, this.props.sizerValence * 2 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * 3 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/solidBlue.mtl')       
@@ -254,7 +89,7 @@ class OrbitalLogic extends React.Component {
             }}
             />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 4 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -3 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d1.obj'),
               mtl: asset('Objects/solidBlue.mtl')       
@@ -288,7 +123,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 2 * iexplode, 0]},{rotateY: 45}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * 3 * iexplode, 0]},{rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/solidBlue.mtl')       
@@ -302,7 +137,7 @@ class OrbitalLogic extends React.Component {
               }}
             />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 4 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -3 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d1.obj'),
               mtl: asset('Objects/solidBlue.mtl')       
@@ -350,7 +185,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 2 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * 3 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/solidBlue.mtl')       
@@ -364,7 +199,7 @@ class OrbitalLogic extends React.Component {
               }}
             />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 4 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -3 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d1.obj'),
               mtl: asset('Objects/solidBlue.mtl')       
@@ -392,7 +227,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]},
-            {translate:[0, this.props.sizerValence * 8 * iexplode, 0]}, ], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -6 * iexplode, 0]}, ], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d5.obj'),
               mtl: asset('Objects/solidBlue.mtl')       
@@ -426,7 +261,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]},             
-            {translate:[0, this.props.sizerValence * 2 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * 3 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/solidBlue.mtl')       
@@ -439,7 +274,7 @@ class OrbitalLogic extends React.Component {
               }}
             />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 4 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -3 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d1.obj'),
               mtl: asset('Objects/solidBlue.mtl')       
@@ -465,7 +300,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]},
-            {translate:[0, this.props.sizerValence * 8 * iexplode, 0]}], 
+            {translate:[0, this.props.sizerValence * -6 * iexplode, 0]}], 
             alignItems: 'center'}}
             source={{
               obj: asset('Objects/d5.obj'),
@@ -498,7 +333,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 2 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * 3 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/transGray.mtl')       
@@ -511,7 +346,7 @@ class OrbitalLogic extends React.Component {
               }}
             />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 4 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -3 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d1.obj'),
               mtl: asset('Objects/solidBlue.mtl')       
@@ -537,7 +372,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]},
-            {translate:[0, this.props.sizerValence * 8 * iexplode, 0]}], 
+            {translate:[0, this.props.sizerValence * -6 * iexplode, 0]}], 
             alignItems: 'center'}}
             source={{
               obj: asset('Objects/d5.obj'),
@@ -570,7 +405,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 2 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * 3 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/transGray.mtl')       
@@ -583,7 +418,7 @@ class OrbitalLogic extends React.Component {
               }}
             />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 4 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -3 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d1.obj'),
               mtl: asset('Objects/transGray.mtl')       
@@ -609,7 +444,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]},
-            {translate:[0, this.props.sizerValence * 8 * iexplode, 0]}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -6 * iexplode, 0]}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d5.obj'),
               mtl: asset('Objects/solidBlue.mtl')       
@@ -641,7 +476,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 2 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * 3 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/transGray.mtl')       
@@ -654,7 +489,7 @@ class OrbitalLogic extends React.Component {
               }}
             />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 4 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -3 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d1.obj'),
               mtl: asset('Objects/transGray.mtl')       
@@ -680,7 +515,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]},
-            {translate:[0, this.props.sizerValence * 8 * iexplode, 0]}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -6 * iexplode, 0]}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d5.obj'),
               mtl: asset('Objects/solidBlue.mtl')       
@@ -712,7 +547,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 2 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * 3 * iexplode, 0]}, {rotateY: 45}], alignItems: 'center'}}
               source={{
                 obj: asset('Objects/d1.obj'),
                 mtl: asset('Objects/transGray.mtl')       
@@ -725,7 +560,7 @@ class OrbitalLogic extends React.Component {
               }}
             />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]}, 
-            {translate:[0, this.props.sizerValence * 4 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -3 * iexplode, 0]}, {rotateZ: 90}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d1.obj'),
               mtl: asset('Objects/transGray.mtl')       
@@ -751,7 +586,7 @@ class OrbitalLogic extends React.Component {
             }}
           />
           <Entity lit="false" style={{transform:[{scale:[this.props.sizerValence,this.props.sizerValence,this.props.sizerValence ]},
-            {translate:[0, this.props.sizerValence * 8 * iexplode, 0]}], alignItems: 'center'}}
+            {translate:[0, this.props.sizerValence * -6 * iexplode, 0]}], alignItems: 'center'}}
             source={{
               obj: asset('Objects/d5.obj'),
               mtl: asset('Objects/transGray.mtl')       
@@ -780,5 +615,5 @@ class OrbitalLogic extends React.Component {
   }
 }
 
-const ConnectedOrbitalLogic = connect(OrbitalLogic);
-export default ConnectedOrbitalLogic;
+const ConnectedOrbitalLogicD = connect(OrbitalLogicD);
+export default ConnectedOrbitalLogicD;

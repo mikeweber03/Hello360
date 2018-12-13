@@ -15,7 +15,8 @@ const State = {
   current: -1,
   viewType: '',
   viewMin: 0,
-  viewMax: 0
+  viewMax: 0,
+  isExploded:false
 };
 
 const listeners = new Set();
@@ -52,6 +53,11 @@ export function setViewType(value) {
   updateComponents();
 }
 
+export function toggleExplode() {   
+  State.isExploded = !State.isExploded;
+  updateComponents();
+}
+
 export function connect(Component) {
   return class Wrapper extends React.Component {
     state = {      
@@ -59,7 +65,8 @@ export function connect(Component) {
       current: State.current,
       viewType: State.viewType,
       viewMin: State.viewMin,
-      viewMax: State.viewMax
+      viewMax: State.viewMax,
+      isExploded: State.isExploded
     };
 
     _listener = () => {
@@ -68,7 +75,8 @@ export function connect(Component) {
         current: State.current,
         viewType: State.viewType,
         viewMin: State.viewMin,
-        viewMax: State.viewMax
+        viewMax: State.viewMax,
+        isExploded: State.isExploded
       });
     };
 
@@ -89,6 +97,7 @@ export function connect(Component) {
           viewType={this.state.viewType}
           viewMin={this.state.viewMin}
           viewMax={this.state.viewMax}
+          isExploded={this.state.isExploded}
         />
       );
     }

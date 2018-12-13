@@ -8,8 +8,13 @@ import {
 //import { Animated } from 'react-native';
 
 import {connect} from '../store';
-import Entity from 'Entity';
-import {returnOrbital} from './components/orbitalLogic'
+//import Entity from 'Entity';
+import OrbitalLogic from './components/orbitalLogic'
+import OrbitalLogicD from './components/orbitalLogic.D'
+import OrbitalLogicP from './components/orbitalLogic.P'
+import OrbitalLogicS from './components/orbitalLogic.S'
+import OrbitalLogicF from './components/orbitalLogic.F';
+
 //import AmbientLight from 'AmbientLight';
 //import PointLight from 'PointLight';
 
@@ -17,14 +22,9 @@ import {returnOrbital} from './components/orbitalLogic'
 
 class AtomView extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      explode: false
-    };
+    super(props);   
   }
-
-  
-
+ 
   render() { 
     //<Entity lit="false" style={{transform:[{scale:[0.6,0.6,0.6]}], alignItems: 'center'}}
     //const e = this.state.element;
@@ -37,12 +37,50 @@ class AtomView extends React.Component {
     }        
     else {
       var element = this.props.elements[this.props.current];
-      var sizerShell = element.CovalentRadius * 0.005;
-      var sizerValence = element.AtomicRadius * 0.005;
+      //var sizerShell = element.CovalentRadius * 0.005;
+      var sizerValence = element.AtomicRadius * 0.004;
      
       var type = element.Valence;
-debugger;
-      return returnOrbital(type, sizerValence);
+      var isExploded = this.props.isExploded;
+
+      if (type=="s1"||type=="s2"){
+        return (            
+          <View>
+            <OrbitalLogicS sizerValence={sizerValence} orbitalType={type} isExploded={isExploded}  />
+          </View>
+        );
+      }
+
+      if (type=="p1"||type=="p2"||type=="p3"||type=="p4"||type=="p5"||type=="p6"){
+        return (            
+          <View>
+            <OrbitalLogicP sizerValence={sizerValence} orbitalType={type} isExploded={isExploded}  />
+          </View>
+        );
+      }
+
+      if (type=="d1"||type=="d2"||type=="d3"||type=="d4"||type=="d5"||type=="d6"||type=="d7"||type=="d8"||type=="d9"||type=="d10"){
+        return (            
+          <View>
+            <OrbitalLogicD sizerValence={sizerValence} orbitalType={type} isExploded={isExploded}  />
+          </View>
+        );
+      }
+
+      if (type=="f1"||type=="f2"||type=="f3"||type=="f4"||type=="f5"||type=="f6"||type=="f7"||
+        type=="f8"||type=="f9"||type=="f10"||type=="f11"||type=="f12"||type=="f13"||type=="f14"){
+        
+        return (            
+          <View>
+            <OrbitalLogicF sizerValence={sizerValence} orbitalType={type} isExploded={isExploded}  />
+          </View>
+        );
+      }
+      return (            
+        <View>
+          <OrbitalLogic sizerValence={sizerValence} orbitalType={type} isExploded={isExploded}  />
+        </View>
+      );
     }
   };
 }
